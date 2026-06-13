@@ -2,51 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>My English Portfolio</title>
-                <!-- This script automatically handles all the styling for us -->
-                    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-                    </head>
-                    <body class="bg-slate-50 text-slate-800 p-6">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENL1W E-Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans selection:bg-purple-500/30">
 
-                        <main class="max-w-2xl mx-auto bg-white border border-slate-200 rounded-xl p-6 shadow-sm my-8">
-                                <header class="border-b border-slate-200 pb-4 mb-6">
-                                            <h1 class="text-3xl font-bold text-slate-900">ENL1W E-Portfolio</h1>
-                                                        <p class="text-slate-500 text-sm">Learning Activity 1.1</p>
-                                                                </header>
+    <!-- App Container -->
+    <div class="flex flex-col md:flex-row min-h-screen">
 
-                                                                        <!-- Communication Section -->
-                                                                                <section class="mb-8">
-                                                                                            <h2 class="text-xl font-semibold text-indigo-600 mb-3">Communication Skills</h2>
-                                                                                                        <p class="text-slate-700 leading-relaxed">
-                                                                                                                        I can help others feel comfortable by putting down any distractions and paying full attention when they are speaking. I can also react to the conversation using non-verbal gestures like nodding while listening, and bringing up common topics we both enjoy, like a show, video game, or sport.
-                                                                                                                                    </p>
-                                                                                                                                            </section>
+        <!-- Left Navigation Sidebar (The "Dictionary" Index) -->
+        <aside class="w-full md:w-64 bg-zinc-900/60 border-b md:border-b-0 md:border-r border-zinc-800/80 p-6 md:fixed md:h-screen overflow-y-auto backdrop-blur-md z-10">
+            <div class="mb-6">
+                <h1 class="text-xl font-black bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent tracking-tight">
+                    ENL1W Portfolio
+                </h1>
+                <p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-1 font-bold">
+                    Course Index
+                </p>
+            </div>
+            
+            <!-- Index Links -->
+            <nav class="space-y-1">
+                <a href="#lesson-1.1" class="block px-3 py-2.5 rounded-xl bg-purple-500/10 text-purple-400 font-semibold border border-purple-500/20 text-sm transition-all">
+                    Lesson 1.1
+                </a>
+                <a href="#lesson-1.2" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300 transition text-sm font-medium">
+                    Lesson 1.2
+                </a>
+                <a href="#lesson-1.3" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300 transition text-sm font-medium">
+                    Lesson 1.3
+                </a>
+                <a href="#lesson-1.4" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300 transition text-sm font-medium">
+                    Lesson 1.4
+                </a>
+                <a href="#lesson-1.5" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300 transition text-sm font-medium">
+                    Lesson 1.5
+                </a>
+            </nav>
+        </aside>
 
-                                                                                                                                                    <!-- Learning Goals Section -->
-                                                                                                                                                            <section>
-                                                                                                                                                                        <h2 class="text-xl font-semibold text-indigo-600 mb-4">My Learning Goals</h2>
-                                                                                                                                                                                    <div class="space-y-4">
-                                                                                                                                                                                                    <div class="border-l-4 border-slate-300 pl-4">
-                                                                                                                                                                                                                        <p class="font-medium text-slate-900">Goal 1: Connections</p>
-                                                                                                                                                                                                                                            <p class="text-slate-600 text-sm">One learning goal I will work on is to make meaningful connections between what I read and the world around me. I can do this by connecting class readings to real-world issues or my own experiences.</p>
-                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                            <div class="border-l-4 border-slate-300 pl-4">
-                                                                                                                                                                                                                                                                                                <p class="font-medium text-slate-900">Goal 2: Point of View</p>
-                                                                                                                                                                                                                                                                                                                    <p class="text-slate-600 text-sm">Another goal I will work on is to recognize and question the point of view in different texts. I can practice this by looking at who is telling the story and why they are sharing that specific perspective.</p>
-                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                    <div class="border-l-4 border-slate-300 pl-4">
-                                                                                                                                                                                                                                                                                                                                                                        <p class="font-medium text-slate-900">Goal 3: Effective Expression</p>
-                                                                                                                                                                                                                                                                                                                                                                                            <p class="text-slate-600 text-sm">A third goal is to express my ideas more effectively and confidently when writing and speaking. I will work on this by organizing my assignments clearly and participating more in discussions and argument skills.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="border-l-4 border-slate-300 pl-4">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                <p class="font-medium text-slate-900">Goal 4: Reading Complex Texts</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <p class="text-slate-600 text-sm">My final goal is to use better reading strategies to understand complex texts. I can achieve this by reading a wider variety of novels to naturally build up my reading skills.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </section>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </main>
+        <!-- Right Side Main Content Area -->
+        <main class="flex-1 md:ml-64 p-6 md:p-12 max-w-4xl section-stack">
+            
+            <!-- LESSON 1.1 SECTION -->
+            <section id="lesson-1.1" class="space-y-10 scroll-mt-12 animate-fade-in">
+                
+                <header class="border-b border-zinc-800 pb-4">
+                    <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Topic Unit 1</span>
+                    <h2 class="text-3xl font-black tracking-tight text-zinc-100 mt-1">Learning Activity 1.1</h2>
+                </header>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                <!-- Communication Skills Block -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-bold text-zinc-200 tracking-tight flex items-center gap-2">
+                        <span class="w-1.5 h-5 bg-purple-500 rounded-full inline-block"></span>
+                        Communication Skills
+                    </h3>
+                    <p class="text-zinc-400 leading-relaxed text-base pl-3">
+                        I can help others feel comfortable by putting down any distractions and paying full attention when they are speaking. I can also react to the conversation using non-verbal gestures like nodding while listening, and bringing up common topics we both enjoy, like a show, video game, or sport.
+                    </p>
+                </div>
+
+                <!-- Learning Goals (Linear Vertical Feed - No Boxy Grids) -->
+                <div class="space-y-6 pt-4">
+                    <h3 class="text-xl font-bold text-zinc-200 tracking-tight flex items-center gap-2 border-b border-zinc-900 pb-3">
+                        <span class="w-1.5 h-5 bg-purple-500 rounded-full inline-block"></span>
+                        My Learning Goals
+                    </h3>
+                    
+                    <!-- Goal Vertical List -->
+                    <div class="space-y-8 pl-3">
+                        
+                        <!-- Goal 1 -->
+                        <div class="border-l-2 border-purple-500/40 pl-4 space-y-1.5 group">
+                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors">Goal 1: Connections</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed">
+                                One learning goal I will work on is to make meaningful connections between what I read and the world around me. I can do this by connecting class readings to real-world issues or my own experiences.
+                            </p>
+                        </div>
+
+                        <!-- Goal 2 -->
+                        <div class="border-l-2 border-purple-500/40 pl-4 space-y-1.5 group">
+                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors">Goal 2: Point of View</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed">
+                                Another goal I will work on is to recognize and question the point of view in different texts. I can practice this by looking at who is telling the story and why they are sharing that specific perspective.
+                            </p>
+                        </div>
+
+                        <!-- Goal 3 -->
+                        <div class="border-l-2 border-purple-500/40 pl-4 space-y-1.5 group">
+                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors">Goal 3: Effective Expression</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed">
+                                A third goal is to express my ideas more effectively and confidently when writing and speaking. I will work on this by organizing my assignments clearly and participating more in discussions and argument skills.
+                            </p>
+                        </div>
+
+                        <!-- Goal 4 -->
+                        <div class="border-l-2 border-purple-500/40 pl-4 space-y-1.5 group">
+                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors">Goal 4: Reading Complex Texts</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed">
+                                A fourth goal is to expand my active reading strategies when exploring deep novels. I plan to focus on breaking down advanced vocabulary, tracking subplots, and reflecting on themes to build strong critical comprehension.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Lesson Placeholder Sections -->
+            <section id="lesson-1.2" class="mt-20 pt-10 border-t border-zinc-900 opacity-40">
+                <h2 class="text-xl font-bold text-zinc-500">Lesson 1.2</h2>
+                <p class="text-zinc-600 text-sm mt-1">Content layout ready for expansion...</p>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
