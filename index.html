@@ -1,65 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENL1W E-Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans selection:bg-purple-500/30">
+<body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans selection:bg-purple-500/30 overflow-x-hidden">
 
-    <!-- Toggle Index Button (Fixed so it is always accessible) -->
-    <button id="toggle-sidebar" class="fixed top-6 right-6 z-50 bg-zinc-900/90 border border-zinc-800 px-4 py-2.5 rounded-xl text-sm font-bold text-purple-400 hover:text-purple-300 backdrop-blur-sm shadow-xl cursor-pointer flex items-center gap-2 active:scale-95 transition-all">
-        <span>☰</span>
-        <span class="hidden sm:inline">Toggle Index</span>
+    <button id="toggle-sidebar" class="fixed top-6 left-6 z-50 bg-zinc-900/90 border border-zinc-800/80 px-4 py-2.5 rounded-xl text-sm font-bold text-purple-400 hover:text-purple-300 hover:bg-zinc-800/80 hover:border-purple-500/30 backdrop-blur-md shadow-2xl cursor-pointer flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
+        <span class="text-base">☰</span>
+        <span class="hidden sm:inline tracking-wide">Toggle Index</span>
     </button>
 
-    <!-- App Container -->
-    <div class="flex flex-col md:flex-row min-h-screen">
+    <aside id="sidebar" class="w-full md:w-64 bg-zinc-900/40 border-b md:border-b-0 md:border-r border-zinc-800/80 p-6 pt-24 fixed left-0 top-0 h-screen overflow-y-auto backdrop-blur-xl z-40 transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform translate-x-0">
+        <div class="mb-6">
+            <h1 class="text-xl font-black bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent tracking-tight">
+                ENL1W Portfolio
+            </h1>
+            <p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-1 font-bold">
+                Course Index
+            </p>
+        </div>
+        
+        <nav class="space-y-1.5">
+            <a href="#lesson-1.1" class="block px-3 py-2.5 rounded-xl bg-purple-500/10 text-purple-400 font-semibold border border-purple-500/20 text-sm transition-all duration-300 hover:translate-x-1">
+                Lesson 1.1
+            </a>
+            <a href="#lesson-1.2" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900/60 hover:text-zinc-300 transition-all duration-300 text-sm font-medium hover:translate-x-1">
+                Lesson 1.2
+            </a>
+            <a href="#lesson-1.3" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900/60 hover:text-zinc-300 transition-all duration-300 text-sm font-medium hover:translate-x-1">
+                Lesson 1.3
+            </a>
+            <a href="#lesson-1.4" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900/60 hover:text-zinc-300 transition-all duration-300 text-sm font-medium hover:translate-x-1">
+                Lesson 1.4
+            </a>
+            <a href="#lesson-1.5" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900/60 hover:text-zinc-300 transition-all duration-300 text-sm font-medium hover:translate-x-1">
+                Lesson 1.5
+            </a>
+        </nav>
+    </aside>
 
-        <!-- Left Navigation Sidebar (The "Dictionary" Index) -->
-        <aside id="sidebar" class="w-full md:w-64 bg-zinc-900/60 border-b md:border-b-0 md:border-r border-zinc-800/80 p-6 md:fixed md:h-screen overflow-y-auto backdrop-blur-md z-30 transition-transform duration-300 ease-in-out">
-            <div class="mb-6">
-                <h1 class="text-xl font-black bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent tracking-tight">
-                    ENL1W Portfolio
-                </h1>
-                <p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-1 font-bold">
-                    Course Index
-                </p>
-            </div>
-            
-            <!-- Index Links -->
-            <nav class="space-y-1">
-                <a href="#lesson-1.1" class="block px-3 py-2.5 rounded-xl bg-purple-500/10 text-purple-400 font-semibold border border-purple-500/20 text-sm transition-all">
-                    Lesson 1.1
-                </a>
-                <a href="#lesson-1.2" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300 transition text-sm font-medium">
-                    Lesson 1.2
-                </a>
-                <a href="#lesson-1.3" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300 transition text-sm font-medium">
-                    Lesson 1.3
-                </a>
-                <a href="#lesson-1.4" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300 transition text-sm font-medium">
-                    Lesson 1.4
-                </a>
-                <a href="#lesson-1.5" class="block px-3 py-2.5 rounded-xl text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300 transition text-sm font-medium">
-                    Lesson 1.5
-                </a>
-            </nav>
-        </aside>
+    <div id="content-wrapper" class="w-full min-h-screen transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) pl-0 md:pl-64 flex justify-center">
 
-        <!-- Right Side Main Content Area -->
-        <main id="main-content" class="flex-1 md:ml-64 p-6 md:p-12 max-w-4xl section-stack transition-all duration-300 ease-in-out">
+        <main class="w-full max-w-3xl p-6 md:p-12 pt-24 md:pt-28 section-stack mx-auto animate-fade-in">
             
-            <!-- LESSON 1.1 SECTION -->
-            <section id="lesson-1.1" class="space-y-10 scroll-mt-12 animate-fade-in">
+            <section id="lesson-1.1" class="space-y-10 scroll-mt-28">
                 
-                <header class="border-b border-zinc-800 pb-4">
+                <header class="border-b border-zinc-900 pb-4">
                     <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Topic Unit 1</span>
                     <h2 class="text-3xl font-black tracking-tight text-zinc-100 mt-1">Learning Activity 1.1</h2>
                 </header>
 
-                <!-- Communication Skills Block -->
                 <div class="space-y-3">
                     <h3 class="text-xl font-bold text-zinc-200 tracking-tight flex items-center gap-2">
                         <span class="w-1.5 h-5 bg-purple-500 rounded-full inline-block"></span>
@@ -70,43 +72,37 @@
                     </p>
                 </div>
 
-                <!-- Learning Goals -->
                 <div class="space-y-6 pt-4">
-                    <h3 class="text-xl font-bold text-zinc-200 tracking-tight flex items-center gap-2 border-b border-zinc-900 pb-3">
+                    <h3 class="text-xl font-bold text-zinc-200 tracking-tight flex items-center gap-2 border-b border-zinc-900/50 pb-3">
                         <span class="w-1.5 h-5 bg-purple-500 rounded-full inline-block"></span>
                         My Learning Goals
                     </h3>
                     
-                    <!-- Goal Vertical List -->
                     <div class="space-y-8 pl-3">
                         
-                        <!-- Goal 1 -->
-                        <div class="border-l-2 border-purple-500/40 pl-4 space-y-1.5 group">
-                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors">Goal 1: Connections</h4>
+                        <div class="border-l-2 border-purple-500/30 pl-4 space-y-1.5 group transition-all duration-300">
+                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors duration-300">Goal 1: Connections</h4>
                             <p class="text-zinc-200 text-sm leading-relaxed">
                                 One learning goal I will work on is to make meaningful connections between what I read and the world around me. I can do this by connecting class readings to real-world issues or my own experiences.
                             </p>
                         </div>
 
-                        <!-- Goal 2 -->
-                        <div class="border-l-2 border-purple-500/40 pl-4 space-y-1.5 group">
-                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors">Goal 2: Point of View</h4>
+                        <div class="border-l-2 border-purple-500/30 pl-4 space-y-1.5 group transition-all duration-300">
+                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors duration-300">Goal 2: Point of View</h4>
                             <p class="text-zinc-200 text-sm leading-relaxed">
                                 Another goal I will work on is to recognize and question the point of view in different texts. I can practice this by looking at who is telling the story and why they are sharing that specific perspective.
                             </p>
                         </div>
 
-                        <!-- Goal 3 -->
-                        <div class="border-l-2 border-purple-500/40 pl-4 space-y-1.5 group">
-                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors">Goal 3: Effective Expression</h4>
+                        <div class="border-l-2 border-purple-500/30 pl-4 space-y-1.5 group transition-all duration-300">
+                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors duration-300">Goal 3: Effective Expression</h4>
                             <p class="text-zinc-200 text-sm leading-relaxed">
                                 A third goal is to express my ideas more effectively and confidently when writing and speaking. I will work on this by organizing my assignments clearly and participating more in discussions and argument skills.
                             </p>
                         </div>
 
-                        <!-- Goal 4 -->
-                        <div class="border-l-2 border-purple-500/40 pl-4 space-y-1.5 group">
-                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors">Goal 4: Reading Complex Texts</h4>
+                        <div class="border-l-2 border-purple-500/30 pl-4 space-y-1.5 group transition-all duration-300">
+                            <h4 class="font-bold text-zinc-200 text-base group-hover:text-purple-400 transition-colors duration-300">Goal 4: Reading Complex Texts</h4>
                             <p class="text-zinc-200 text-sm leading-relaxed">
                                 A fourth goal is to expand my active reading strategies when exploring deep novels. I plan to focus on breaking down advanced vocabulary, tracking subplots, and reflecting on themes to build strong critical comprehension.
                             </p>
@@ -116,8 +112,7 @@
                 </div>
             </section>
 
-            <!-- Future Lesson Placeholder Sections -->
-            <section id="lesson-1.2" class="mt-20 pt-10 border-t border-zinc-900 opacity-40">
+            <section id="lesson-1.2" class="mt-20 pt-10 border-t border-zinc-900 opacity-20">
                 <h2 class="text-xl font-bold text-zinc-500">Lesson 1.2</h2>
                 <p class="text-zinc-600 text-sm mt-1">Content layout ready for expansion...</p>
             </section>
@@ -125,19 +120,17 @@
         </main>
     </div>
 
-    <!-- JavaScript Execution Logic for Toggling Layout State -->
     <script>
         const toggleBtn = document.getElementById('toggle-sidebar');
         const sidebar = document.getElementById('sidebar');
-        const mainContent = document.getElementById('main-content');
+        const contentWrapper = document.getElementById('content-wrapper');
 
         toggleBtn.addEventListener('click', () => {
-            // Toggles visibility states for both mobile layout and desktop layouts
-            sidebar.classList.toggle('hidden');
-            sidebar.classList.toggle('md:relative');
+            // Smoothly transitions sidebar off-screen left and handles mobile view states
+            sidebar.classList.toggle('-translate-x-full');
             
-            // Adjusts margins dynamically on wide screens to occupy full real estate
-            mainContent.classList.toggle('md:ml-64');
+            // Instantly shifts wrapper space layout, allowing mx-auto to center content smoothly
+            contentWrapper.classList.toggle('md:pl-64');
         });
     </script>
 
